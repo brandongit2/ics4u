@@ -6,6 +6,17 @@ public class BlackJack {
         Die die = new Die();
         die.setNumSides(numSides);
         
+        double[] bias = new double[numSides];
+        for (int i = 0; i < numSides; i++) {
+            bias[i] = 1.0 / numSides;
+        }
+        try {
+            die.setBias(bias);
+        } catch (Exception err) {
+            System.out.println("Invalid bias.");
+            System.exit(1);
+        }
+        
         Scanner sc = new Scanner(System.in);
         
         System.out.format("Welcome to Blackjack!\nThis game is being played with a %d-sided die.\n\nIt's your turn!\n", numSides);

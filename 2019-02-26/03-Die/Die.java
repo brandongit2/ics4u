@@ -3,7 +3,6 @@ import java.util.Random;
 public class Die {
     private int numSides;
     private double[] bias;
-    
     private Random random = new Random();
     
     public int getNumSides() {
@@ -25,6 +24,10 @@ public class Die {
     }
     
     public int roll() {
-        return random.nextInt(numSides) + 1;
+        while (true) {
+            double randDouble = Math.random();
+            int randInt = random.nextInt(numSides);
+            if (bias[randInt] >= randDouble) return randInt + 1;
+        }
     }
 }
