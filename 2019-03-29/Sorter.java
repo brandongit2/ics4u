@@ -1,3 +1,7 @@
+// Brandon Tsang
+// March 29, 2019
+// ICS4U1-05 | Mr. Radulovic
+
 public interface Sorter {
     /**
      * This method sets the current list that is used in this class.  The original list should never be changed.
